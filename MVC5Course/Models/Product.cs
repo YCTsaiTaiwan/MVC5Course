@@ -20,11 +20,11 @@ namespace MVC5Course.Models
         {
             this.OrderLine = new HashSet<OrderLine>();
         }
-        [Required]
-        [MinLength(3),MaxLength(30)]
-        [RegularExpression("(.+)-(.+)", ErrorMessage ="格式錯誤")]
+       
         public int ProductId { get; set; }
-        [Required(ErrorMessage = "請輸入商品名稱")]
+        [Required]
+        [MinLength(3), MaxLength(30)]
+        [RegularExpression("(.+)-(.+)", ErrorMessage = "格式錯誤")]
         public string ProductName { get; set; }
         [Required]
         [Range(0, 999999, ErrorMessage = "請輸入正常範圍"),]
