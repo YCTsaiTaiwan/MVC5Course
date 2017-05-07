@@ -8,7 +8,7 @@ namespace MVC5Course.Models.ViewModels
 {
     public class ProductLiteVM
     {
-        [Required]
+       
         public int ProductId { get; set; }
 
         [StringLength(80, ErrorMessage = "欄位長度不得大於 80 個字元")]
