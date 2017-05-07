@@ -11,10 +11,13 @@ using MVC5Course.Models.ViewModels;
 
 namespace MVC5Course.Controllers
 {
+   
     public class ProductsController : Controller
     {
         private FabricsEntities db = new FabricsEntities();
 
+        
+        
 
         public ActionResult ParttialProduct()
         {
@@ -140,5 +143,37 @@ namespace MVC5Course.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        #region create
+        public ActionResult CreateProduct()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateProduct(ProductLiteVM data)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("ListProducts");
+            }
+            return View();
+        }
+
+        public ActionResult ListProducts()
+        {
+            var data = db.Product
+                              .Select(p => new ProductLiteVM()
+                {
+                    ProductId = p.ProductId,
+                    ProductName = p.ProductName,
+                    Price = p.Price,
+                    Stock = p.Stock
+                }).Take(10);
+        
+            return View(data);
+        }
+        #endregion
     }
 }

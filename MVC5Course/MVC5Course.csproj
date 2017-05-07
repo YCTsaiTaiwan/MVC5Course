@@ -287,6 +287,8 @@
     <Content Include="Models\Fabrics.edmx.diagram">
       <DependentUpon>Fabrics.edmx</DependentUpon>
     </Content>
+    <Content Include="Models\CreateProduct.cshtml" />
+    <Content Include="Models\ListProducts.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
